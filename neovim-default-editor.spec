@@ -5,11 +5,7 @@ Summary:        Set neovim as the default editor
 
 License:        MIT
 URL:            https://neovim.io
-Source0:        nvim-default-editor.sh
-Source1:        nvim-default-editor.csh
-Source2:        nvim-default-editor.fish
-Source3:        LICENSE
-Source4:        README.md
+Source0:        https://github.com/skoved/neovim-default-editor-rpm/archive/refs/heads/main.tar.gz
 
 Conflicts:      system-default-editor
 Provides:       system-default-editor
@@ -21,15 +17,16 @@ BuildArch:      noarch
 This package contains files needed to set Neovim as the default editor.
 
 %prep
+%autosetup
 
 %build
 
 %install
 mkdir   -p       %{buildroot}/%{_sysconfdir}/profile.d
-install -p -m644 %{SOURCE0} %{buildroot}/%{_sysconfdir}/profile.d/nvim-default-editor.sh
-install -p -m644 %{SOURCE1} %{buildroot}/%{_sysconfdir}/profile.d/nvim-default-editor.csh
+install -p -m644 nvim-default-editor.sh   %{buildroot}/%{_sysconfdir}/profile.d/nvim-default-editor.sh
+install -p -m644 nvim-default-editor.csh  %{buildroot}/%{_sysconfdir}/profile.d/nvim-default-editor.csh
 mkdir   -p       %{buildroot}/%{_datadir}/fish/vendor_conf.d
-install -p -m644 %{SOURCE2} %{buildroot}/%{_datadir}/fish/vendor_conf.d/nvim-default-editor.fish
+install -p -m644 nvim-default-editor.fish %{buildroot}/%{_datadir}/fish/vendor_conf.d/nvim-default-editor.fish
 
 %files
 %license LICENSE
