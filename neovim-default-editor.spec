@@ -32,8 +32,8 @@ mkdir   -p       %{buildroot}/%{_datadir}/fish/vendor_conf.d
 install -p -m644 %{SOURCE2} %{buildroot}/%{_datadir}/fish/vendor_conf.d/nvim-default-editor.fish
 
 %files
-%license %{SOURCE3}
-%doc     %{SOURCE4}
+%license LICENSE
+%doc     README.md
 %dir     %{_datadir}/fish/vendor_conf.d
 %{_datadir}/fish/vendor_conf.d/nvim-default-editor.fish
 %config  %{_sysconfdir}/profile.d/nvim-default-editor.sh
