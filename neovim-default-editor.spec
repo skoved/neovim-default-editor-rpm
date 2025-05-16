@@ -21,7 +21,6 @@ BuildArch:      noarch
 This package contains files needed to set Neovim as the default editor.
 
 %prep
-%autosetup
 
 %build
 
